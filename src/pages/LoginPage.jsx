@@ -13,11 +13,11 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useLoginMutation } from "../features/auth/authApiSclice";
 import { useDispatch, useSelector } from "react-redux";
-import { setCredentials, selectCurrentUser } from "../features/auth/authSlice";
+import { setCredentials } from "../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-  const user = useSelector(selectCurrentUser);
+  const user = useSelector((state)=>state.auth.user);
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

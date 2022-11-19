@@ -11,10 +11,9 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../features/auth/authSlice";
 
 function Navbar() {
-  const [user, { isLoading }] = useSelector(selectCurrentUser);
+  const user = useSelector((state)=>state.auth.user);
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
